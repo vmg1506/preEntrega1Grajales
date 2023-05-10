@@ -17,7 +17,7 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee1").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono1").innerHTML = bono(venta_asesor1);
             intentos++;
-            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+            if (company(nombre_empresa = "N/A")){
                 sumatoria = sumatoria;
             }else {
                 sumatoria = sumatoria + venta_asesor1;
@@ -37,7 +37,7 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee2").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono2").innerHTML = bono(venta_asesor1);
             intentos++;
-            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+            if (company(nombre_empresa = "N/A")){
                 sumatoria = sumatoria;
             }else {
                 sumatoria = sumatoria + venta_asesor1;
@@ -56,7 +56,7 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee3").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono3").innerHTML = bono(venta_asesor1);
             intentos++;
-            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+            if (company(nombre_empresa = "N/A")){
                 sumatoria = sumatoria;
             }else {
                 sumatoria = sumatoria + venta_asesor1;
@@ -75,7 +75,7 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee4").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono4").innerHTML = bono(venta_asesor1);
             intentos++;
-            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+            if (company(nombre_empresa = "N/A")){
                 sumatoria = sumatoria;
             }else {
                 sumatoria = sumatoria + venta_asesor1;
@@ -94,7 +94,7 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee5").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono5").innerHTML = bono(venta_asesor1);
             intentos++;
-            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+            if (company(nombre_empresa = "N/A")){
                 sumatoria = sumatoria;
             }else {
                 sumatoria = sumatoria + venta_asesor1;
