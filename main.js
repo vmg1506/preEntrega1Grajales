@@ -17,7 +17,12 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee1").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono1").innerHTML = bono(venta_asesor1);
             intentos++;
-            sumatoria = sumatoria + venta_asesor1;
+            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+                sumatoria = sumatoria;
+            }else {
+                sumatoria = sumatoria + venta_asesor1;
+            } 
+            
             alert("PRIMER CICLO TERMINADO");
         }else if(intentos == 1){
             let nombre_asesor1 = prompt("Ingrese el nombre del segundo asesor");
@@ -32,7 +37,11 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee2").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono2").innerHTML = bono(venta_asesor1);
             intentos++;
-            sumatoria = sumatoria + venta_asesor1;
+            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+                sumatoria = sumatoria;
+            }else {
+                sumatoria = sumatoria + venta_asesor1;
+            }
             alert("SEGUNDO CICLO TERMINADO");
         }else if(intentos == 2){
             let nombre_asesor1 = prompt("Ingrese el nombre del tercer asesor");
@@ -47,7 +56,11 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee3").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono3").innerHTML = bono(venta_asesor1);
             intentos++;
-            sumatoria = sumatoria + venta_asesor1;
+            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+                sumatoria = sumatoria;
+            }else {
+                sumatoria = sumatoria + venta_asesor1;
+            }
             alert("TERCER CICLO TERMINADO");
         } else if(intentos == 3){
             let nombre_asesor1 = prompt("Ingrese el nombre del cuarto asesor");
@@ -62,7 +75,11 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee4").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono4").innerHTML = bono(venta_asesor1);
             intentos++;
-            sumatoria = sumatoria + venta_asesor1;
+            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+                sumatoria = sumatoria;
+            }else {
+                sumatoria = sumatoria + venta_asesor1;
+            }
             alert("CUARTO CICLO TERMINADO");
         }else if(intentos == 4){
             let nombre_asesor1 = prompt("Ingrese el nombre del quinto asesor");
@@ -77,7 +94,11 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("fee5").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono5").innerHTML = bono(venta_asesor1);
             intentos++;
-            sumatoria = sumatoria + venta_asesor1;
+            if (venta_asesor1 == 0 || venta_asesor1 == ""){
+                sumatoria = sumatoria;
+            }else {
+                sumatoria = sumatoria + venta_asesor1;
+            }
             alert("ULTIMO CICLO TERMINADO");
         }
             
@@ -151,9 +172,10 @@ function bono(valor_bono){
     } else if(valor_bono > 25000 && valor_bono <=35000) {
         valor_bono = 750;
         return valor_bono
-    }else {
+    }else if(valor_bono > 35000){
         valor_bono = 1000;
         return valor_bono
-    }
+    }else
+    return valor_bono = 0;
 }
 
