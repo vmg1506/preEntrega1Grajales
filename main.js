@@ -10,9 +10,10 @@ document.getElementById("submit").onclick = function() {
             let nombre_empresa = prompt("Ingrese empresa A, B O C");
             nombre_empresa = nombre_empresa.toUpperCase();
             document.getElementById("company1").innerHTML = company(nombre_empresa);
-            let venta_asesor1 = prompt("ingrese el valor_bono de la venta");
-            venta_asesor1 = parseInt(venta_asesor1);
+            let venta_asesor1 = parseInt(prompt("ingrese el valor de la venta"));
+            venta_asesor1 = comprobar_mumero(venta_asesor1);
             document.getElementById("sale1").innerHTML = venta(venta_asesor1, nombre_empresa);
+            venta_asesor1 = parseInt(venta_asesor1);
             document.getElementById("comision1").innerHTML = comision_venta(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("fee1").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("bono1").innerHTML = bono(venta_asesor1);
@@ -32,6 +33,7 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("company2").innerHTML = company(nombre_empresa);
             let venta_asesor1 = prompt("ingrese el valor de la venta");
             venta_asesor1 = parseInt(venta_asesor1);
+            venta_asesor1 = comprobar_mumero(venta_asesor1);
             document.getElementById("sale2").innerHTML = venta(venta_asesor1, nombre_empresa);
             document.getElementById("comision2").innerHTML = comision_venta(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("fee2").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
@@ -51,6 +53,7 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("company3").innerHTML = company(nombre_empresa);
             let venta_asesor1 = prompt("ingrese el valor de la venta");
             venta_asesor1 = parseInt(venta_asesor1);
+            venta_asesor1 = comprobar_mumero(venta_asesor1);
             document.getElementById("sale3").innerHTML = venta(venta_asesor1, nombre_empresa);
             document.getElementById("comision3").innerHTML = comision_venta(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("fee3").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
@@ -70,6 +73,7 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("company4").innerHTML = company(nombre_empresa);
             let venta_asesor1 = prompt("ingrese el valor de la venta");
             venta_asesor1 = parseInt(venta_asesor1);
+            venta_asesor1 = comprobar_mumero(venta_asesor1);
             document.getElementById("sale4").innerHTML = venta(venta_asesor1, nombre_empresa);
             document.getElementById("comision4").innerHTML = comision_venta(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("fee4").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
@@ -89,6 +93,7 @@ document.getElementById("submit").onclick = function() {
             document.getElementById("company5").innerHTML = company(nombre_empresa);
             let venta_asesor1 = prompt("ingrese el valor de la venta");
             venta_asesor1 = parseInt(venta_asesor1);
+            venta_asesor1 = comprobar_mumero(venta_asesor1);
             document.getElementById("sale5").innerHTML = venta(venta_asesor1, nombre_empresa);
             document.getElementById("comision5").innerHTML = comision_venta(nombre_empresa, venta_asesor1, impuestos);
             document.getElementById("fee5").innerHTML = calular_propina(nombre_empresa, venta_asesor1, impuestos);
@@ -179,3 +184,9 @@ function bono(valor_bono){
     return valor_bono = 0;
 }
 
+function comprobar_mumero (num) {
+    while (num == null || /\D/.test(num) || num == "") {
+        num = prompt("Entre un número VÁLIDO: ");
+    }
+    return parseInt(num)
+}
