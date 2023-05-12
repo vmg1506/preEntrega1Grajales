@@ -1,0 +1,32 @@
+table , td, th {
+	border: 1px solid #595959;
+	border-collapse: collapse;
+	color: white;
+	
+}
+td, th {
+	padding: 3px;
+	width: 30x;
+	height: 25px;
+}
+th {
+	background: #f0e6cc;
+}
+.even {
+	background: #e0a911;
+}
+.odd {
+	background: #fefcf9;
+}
+
+
+.tabla {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	
+}
+
+.color1 {
+	background-color: black;
+}	

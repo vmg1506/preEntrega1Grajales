@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.scss","main.css"],"names":[],"mappings":"AAAA;EACC,yBAAA;EACA,yBAAA;ACCD;;ADCA;EACC,YAAA;EACA,UAAA;EACA,YAAA;ACED;;ADAA;EACC,mBAAA;ACGD;;ADDA;EACC,mBAAA;ACID;;ADFA;EACC,mBAAA;ACKD","file":"main.css"}
+{"version":3,"sources":["_tabla.scss","main.css","_reset.scss"],"names":[],"mappings":"AAAA;EACC,yBAAA;EACA,yBAAA;EACA,YAAA;ACCD;;ADEA;EACC,YAAA;EACA,UAAA;EACA,YAAA;ACCD;;ADCA;EACC,mBAAA;ACED;;ADAA;EACC,mBAAA;ACGD;;ADDA;EACC,mBAAA;ACID;;ADAA;EACC,aAAA;EACA,uBAAA;EACA,WAAA;ACGD;;ADCA;EACC,uBAAA;ACED;;AChCA;EACI,kCAAA;ADmCJ","file":"main.css"}
