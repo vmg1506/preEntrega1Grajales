@@ -161,8 +161,15 @@ function bono(valor_bono, company_name){
 
 
 function comprobar_mumero (num) {
-    while (num == null || /\D/.test(num) || num == "") {
-        num = prompt("Entre un número VÁLIDO: ");
+    while (true) {
+        
+        if(!isNaN(num) && num != null && num != ""){
+            return parseInt(num);
+        break
+        } else{
+            alert("INGRESAR SOLO VALORES NUMERICOS");
+            num = prompt("Ingrese el valor de la venta");
+        }
     }
     return parseInt(num)
 }
