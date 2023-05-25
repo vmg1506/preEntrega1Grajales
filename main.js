@@ -140,7 +140,7 @@ function calular_propina (company_name, valor) {
     if (company_name == "") {
         return "N/A"
     }else if(company_name == "" || company_name =="A" || company_name == "B" || company_name == "C"){
-        let fee = 0.25;
+        let fee = 0.05;
         valor = valor * fee;
         return valor
     }else {
