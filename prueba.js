@@ -136,22 +136,81 @@ class asesor {
 let asesor1 = new asesor();
 arreglo = [];
 
+let table = document.createElement('table');
+let thead = document.createElement('thead');
+let tbody = document.createElement('tbody');
+
+table.appendChild(thead);
+table.appendChild(tbody);
+
+// Adding the entire table to the body tag
+document.getElementById('body').appendChild(table);
+
+let row_1 = document.createElement('tr');
+let heading_1 = document.createElement('th');
+heading_1.innerHTML = "ASESOR";
+let heading_2 = document.createElement('th');
+heading_2.innerHTML = "COMPAÑIA";
+let heading_3 = document.createElement('th');
+heading_3.innerHTML = "VENTA";
+let heading_4 = document.createElement('th');
+heading_4.innerHTML = "COMISION";
+let heading_5 = document.createElement('th');
+heading_5.innerHTML = "PROPINA";
+let heading_6 = document.createElement('th');
+heading_6.innerHTML = "BONO";
+
+row_1.appendChild(heading_1);
+row_1.appendChild(heading_2);
+row_1.appendChild(heading_3);
+row_1.appendChild(heading_4);
+row_1.appendChild(heading_5);
+row_1.appendChild(heading_6);
+thead.appendChild(row_1);
 
 
-        arreglo[0] = asesor1.get_nombre();
-        document.getElementById("name").innerHTML = arreglo[0]
-        arreglo[1] = asesor1.get_empresa();
+let row_2 = document.createElement("tr");
+let row_2_data_1 = document.createElement("td");
+arreglo[0] = asesor1.get_nombre();
+row_2_data_1.innerHTML = arreglo[0];
+let row_2_data_2 = document.createElement("td");
+arreglo[1] = asesor1.get_empresa();
+row_2_data_2.innerHTML = arreglo[1];
+let row_2_data_3 = document.createElement("td");
+arreglo[2] = asesor1.get_venta();
+row_2_data_3.innerHTML = arreglo[2];
+let row_2_data_4 = document.createElement("td");
+arreglo[3] = asesor1.comision_venta();
+row_2_data_4.innerHTML = arreglo[3];
+let row_2_data_5 = document.createElement("td");
+arreglo[4] = asesor1.calular_propina();
+row_2_data_5.innerHTML = arreglo[4];
+let row_2_data_6 = document.createElement("td");
+arreglo[5] = asesor1.vale();
+row_2_data_6.innerHTML = arreglo[5];
+
+row_2.appendChild(row_2_data_1);
+row_2.appendChild(row_2_data_2);
+row_2.appendChild(row_2_data_3);
+row_2.appendChild(row_2_data_4);
+row_2.appendChild(row_2_data_5);
+row_2.appendChild(row_2_data_6);
+tbody.appendChild(row_2);
+
+        
+        /* document.getElementById("name").innerHTML = arreglo[0]
+        
         document.getElementById("company").innerHTML = arreglo[1]
-        arreglo[2] = asesor1.get_venta();
+        
         document.getElementById("sale").innerHTML = arreglo[2]
-        arreglo[3] = asesor1.comision_venta();
+       
         document.getElementById("comition").innerHTML = arreglo[3]
-        arreglo[4] = asesor1.calular_propina();
+        
         document.getElementById("fee").innerHTML = arreglo[4]
-        arreglo[5] = asesor1.vale();
+        
         document.getElementById("bono").innerHTML = arreglo[5]
 
-        console.log(arreglo);
+        console.log(arreglo); */
 
 
 
