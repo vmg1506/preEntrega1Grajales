@@ -133,9 +133,9 @@ class asesor {
 }
 
 
-let asesor1 = new asesor();
+let asesor1 = new asesor(), sumatoria = [];
 arreglo = [];
-
+document.getElementById('submit').onclick = function() {
 let table = document.createElement('table');
 let thead = document.createElement('thead');
 let tbody = document.createElement('tbody');
@@ -169,48 +169,46 @@ row_1.appendChild(heading_6);
 thead.appendChild(row_1);
 
 
-let row_2 = document.createElement("tr");
-let row_2_data_1 = document.createElement("td");
-arreglo[0] = asesor1.get_nombre();
-row_2_data_1.innerHTML = arreglo[0];
-let row_2_data_2 = document.createElement("td");
-arreglo[1] = asesor1.get_empresa();
-row_2_data_2.innerHTML = arreglo[1];
-let row_2_data_3 = document.createElement("td");
-arreglo[2] = asesor1.get_venta();
-row_2_data_3.innerHTML = arreglo[2];
-let row_2_data_4 = document.createElement("td");
-arreglo[3] = asesor1.comision_venta();
-row_2_data_4.innerHTML = arreglo[3];
-let row_2_data_5 = document.createElement("td");
-arreglo[4] = asesor1.calular_propina();
-row_2_data_5.innerHTML = arreglo[4];
-let row_2_data_6 = document.createElement("td");
-arreglo[5] = asesor1.vale();
-row_2_data_6.innerHTML = arreglo[5];
 
-row_2.appendChild(row_2_data_1);
-row_2.appendChild(row_2_data_2);
-row_2.appendChild(row_2_data_3);
-row_2.appendChild(row_2_data_4);
-row_2.appendChild(row_2_data_5);
-row_2.appendChild(row_2_data_6);
-tbody.appendChild(row_2);
+for(let i = 1; i <= 3 ; i++){
+        let row_2 = document.createElement("tr");
+        let row_2_data_1 = document.createElement("td");
+        arreglo[0] = asesor1.get_nombre();
+        row_2_data_1.innerHTML = arreglo[0];
+        let row_2_data_2 = document.createElement("td");
+        arreglo[1] = asesor1.get_empresa();
+        row_2_data_2.innerHTML = arreglo[1];
+        let row_2_data_3 = document.createElement("td");
+        arreglo[2] = asesor1.get_venta();
+        row_2_data_3.innerHTML = arreglo[2];
+        let row_2_data_4 = document.createElement("td");
+        arreglo[3] = asesor1.comision_venta();
+        row_2_data_4.innerHTML = arreglo[3];
+        let row_2_data_5 = document.createElement("td");
+        arreglo[4] = asesor1.calular_propina();
+        row_2_data_5.innerHTML = arreglo[4];
+        let row_2_data_6 = document.createElement("td");
+        arreglo[5] = asesor1.vale();
+        row_2_data_6.innerHTML = arreglo[5];
 
-        
-        /* document.getElementById("name").innerHTML = arreglo[0]
-        
-        document.getElementById("company").innerHTML = arreglo[1]
-        
-        document.getElementById("sale").innerHTML = arreglo[2]
-       
-        document.getElementById("comition").innerHTML = arreglo[3]
-        
-        document.getElementById("fee").innerHTML = arreglo[4]
-        
-        document.getElementById("bono").innerHTML = arreglo[5]
+        row_2.appendChild(row_2_data_1);
+        row_2.appendChild(row_2_data_2);
+        row_2.appendChild(row_2_data_3);
+        row_2.appendChild(row_2_data_4);
+        row_2.appendChild(row_2_data_5);
+        row_2.appendChild(row_2_data_6);
+        tbody.appendChild(row_2);
 
-        console.log(arreglo); */
+        sumatoria.push(arreglo[2]);
+
+  }
+  let total = 0;
+  for(let j of sumatoria){
+    total+=j;
+  }
+  document.getElementById("totalizado").innerHTML = total;
+} 
+
 
 
 
