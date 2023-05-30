@@ -133,7 +133,7 @@ class asesor {
 }
 
 
-let asesor1 = new asesor(), sumatoria = [];
+let asesor1 = new asesor(), sumatoria = [], info = [], max = [];
 arreglo = [];
 document.getElementById('submit').onclick = function() {
 let table = document.createElement('table');
@@ -143,7 +143,7 @@ let tbody = document.createElement('tbody');
 table.appendChild(thead);
 table.appendChild(tbody);
 
-// Adding the entire table to the body tag
+
 document.getElementById('body').appendChild(table);
 
 let row_1 = document.createElement('tr');
@@ -199,6 +199,7 @@ for(let i = 1; i <= 3 ; i++){
         row_2.appendChild(row_2_data_6);
         tbody.appendChild(row_2);
 
+        info[i] = {nombre: arreglo[0], venta: arreglo[2]}
         sumatoria.push(arreglo[2]);
 
   }
@@ -206,8 +207,30 @@ for(let i = 1; i <= 3 ; i++){
   for(let j of sumatoria){
     total+=j;
   }
+  console.log(info);
   document.getElementById("totalizado").innerHTML = total;
+  
+  max = info.reduce((previous, current) => {
+    return current.venta > previous.venta ? current : previous;
+  });
+  console.log(max);
+  document.getElementById("nombre_asesor").innerHTML = max.nombre;
+  document.getElementById("venta_asesor").innerHTML = max.venta;
+
+  Swal.fire('El asesor: ', (max.nombre).toString(), 'Realizo la mayor venta por valor de: ', (max.venta).toString());
 } 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
