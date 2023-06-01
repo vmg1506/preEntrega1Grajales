@@ -1,211 +1,229 @@
-document.getElementById("submit").onclick = function() {
-    let intentos = 0;
-    let impuestos = 0.19;
-    let sumatoria= 0;
+
+
+
+class asesor {
+    constructor(){
+        this.nombre = ""
+        this.empresa = ""
+        this.venta = 0;
+        this.comision = 0;
+        this.fee = 0;
+        this.bono = 0;
+
+    }
+
+    get_nombre() {
+        this.nombre = prompt("Ingrese el nombre del asesor: ");
+        console.log("El nombre del asesor es: ", this.nombre);
+        return this.nombre
+    }
+
+    get_empresa(){
+        this.empresa = prompt("Ingrese empresa A, B o C");
+        this.empresa = this.empresa.toUpperCase();
+        this.empresa = this.company(this.empresa);
+        console.log("empresa: ", this.empresa);
+        
+        return this.empresa
+    }
+
+    get_venta(){
+        this.venta = prompt("Ingrese el valor de la venta");
+        this.venta = this.comprobar_mumero(this.venta);
+        console.log("Ingrese el valor de la venta: ", this.venta);
+        return this.venta
+
+    }
+        
     
-    for (let i = 1; i <= 5; i++) {
-        if(intentos <1){
-            let nombre_asesor1 = prompt("Ingrese el nombre del primer asesor");
-            document.getElementById("name1").innerHTML = nombre_asesor1;
-            let nombre_empresa = prompt("Ingrese empresa A, B O C");
-            nombre_empresa = nombre_empresa.toUpperCase();
-            document.getElementById("company1").innerHTML = company(nombre_empresa);
-            let venta_asesor = parseInt(prompt("ingrese el valor de la venta"));
-            venta_asesor = comprobar_mumero(venta_asesor, nombre_empresa);
-            venta_asesor = parseInt(venta_asesor);
-            if(venta_asesor == 0){
+
+    comprobar_mumero (valor) {
+        while (true) {
+            
+            if(!isNaN(valor) && valor != null && valor != ""){
+                if(this.empresa == "" || this.empresa =="A" || this.empresa == "B" || this.empresa == "C"){
+                    return parseInt(valor);
+                }else {
+                    return parseInt(valor = 0)
+                }
                 
-                sumatoria = sumatoria;
-            } else {
-                sumatoria = sumatoria + venta_asesor
+            break
+            } else{
+                alert("INGRESAR SOLO VALORES NUMERICOS");
+                valor = prompt("Ingrese el valor de la venta");
             }
-            document.getElementById("sale1").innerHTML = venta(venta_asesor, nombre_empresa);
-            document.getElementById("comision1").innerHTML = comision_venta(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("fee1").innerHTML = calular_propina(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("bono1").innerHTML = bono(venta_asesor, nombre_empresa);
-            intentos++;
-            alert("PRIMER CICLO TERMINADO");
-        }else if(intentos == 1){
-            let nombre_asesor1 = prompt("Ingrese el nombre del segundo asesor");
-            document.getElementById("name2").innerHTML = nombre_asesor1;
-            let nombre_empresa = prompt("Ingrese empresa A, B O C");
-            nombre_empresa = nombre_empresa.toUpperCase();
-            document.getElementById("company2").innerHTML = company(nombre_empresa);
-            let venta_asesor = prompt("ingrese el valor de la venta");
-            venta_asesor = parseInt(venta_asesor);
-            venta_asesor = comprobar_mumero(venta_asesor, nombre_empresa);
-            if(venta_asesor == 0){
-                
-                sumatoria = sumatoria;
-            } else {
-                sumatoria = sumatoria + venta_asesor
-            }
-            document.getElementById("sale2").innerHTML = venta(venta_asesor, nombre_empresa);
-            document.getElementById("comision2").innerHTML = comision_venta(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("fee2").innerHTML = calular_propina(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("bono2").innerHTML = bono(venta_asesor, nombre_empresa);
-            intentos++;
-            alert("SEGUNDO CICLO TERMINADO");
-        }else if(intentos == 2){
-            let nombre_asesor1 = prompt("Ingrese el nombre del tercer asesor");
-            document.getElementById("name3").innerHTML = nombre_asesor1;
-            let nombre_empresa = prompt("Ingrese empresa A, B O C");
-            nombre_empresa = nombre_empresa.toUpperCase();
-            document.getElementById("company3").innerHTML = company(nombre_empresa);
-            let venta_asesor = prompt("ingrese el valor de la venta");
-            venta_asesor = parseInt(venta_asesor);
-            venta_asesor = comprobar_mumero(venta_asesor, nombre_empresa);
-            if(venta_asesor == 0){
-                
-                sumatoria = sumatoria;
-            } else {
-                sumatoria = sumatoria + venta_asesor
-            }
-            document.getElementById("sale3").innerHTML = venta(venta_asesor, nombre_empresa);
-            document.getElementById("comision3").innerHTML = comision_venta(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("fee3").innerHTML = calular_propina(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("bono3").innerHTML = bono(venta_asesor, nombre_empresa);
-            intentos++;
-            alert("TERCER CICLO TERMINADO");
-        } else if(intentos == 3){
-            let nombre_asesor1 = prompt("Ingrese el nombre del cuarto asesor");
-            document.getElementById("name4").innerHTML = nombre_asesor1;
-            let nombre_empresa = prompt("Ingrese empresa A, B O C");
-            nombre_empresa = nombre_empresa.toUpperCase();
-            document.getElementById("company4").innerHTML = company(nombre_empresa);
-            let venta_asesor = prompt("ingrese el valor de la venta");
-            venta_asesor = parseInt(venta_asesor);
-            venta_asesor = comprobar_mumero(venta_asesor, nombre_empresa);
-            if(venta_asesor == 0){
-                
-                sumatoria = sumatoria;
-            } else {
-                sumatoria = sumatoria + venta_asesor
-            }
-            document.getElementById("sale4").innerHTML = venta(venta_asesor, nombre_empresa);
-            document.getElementById("comision4").innerHTML = comision_venta(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("fee4").innerHTML = calular_propina(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("bono4").innerHTML = bono(venta_asesor, nombre_empresa);
-            intentos++;
-            alert("CUARTO CICLO TERMINADO");
-        }else if(intentos == 4){
-            let nombre_asesor1 = prompt("Ingrese el nombre del quinto asesor");
-            document.getElementById("name5").innerHTML = nombre_asesor1;
-            let nombre_empresa = prompt("Ingrese empresa A, B O C");
-            nombre_empresa = nombre_empresa.toUpperCase();
-            document.getElementById("company5").innerHTML = company(nombre_empresa);
-            let venta_asesor = prompt("ingrese el valor de la venta");
-            venta_asesor = parseInt(venta_asesor);
-            venta_asesor = comprobar_mumero(venta_asesor, nombre_empresa);
-            if(venta_asesor == 0){
-                
-                sumatoria = sumatoria;
-            } else {
-                sumatoria = sumatoria + venta_asesor
-            }
-            document.getElementById("sale5").innerHTML = venta(venta_asesor, nombre_empresa);
-            document.getElementById("comision5").innerHTML = comision_venta(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("fee5").innerHTML = calular_propina(nombre_empresa, venta_asesor, impuestos);
-            document.getElementById("bono5").innerHTML = bono(venta_asesor, nombre_empresa);
-            intentos++;
-            alert("ULTIMO CICLO TERMINADO");
         }
-            
-        
-    }
-    document.getElementById("total_ventas").innerHTML = sumatoria;
-}
-
-function company(company_name) {
-    if (company_name == "") {
-        return "N/A"
-    }else if (company_name == "A" || company_name == "B" || company_name == "C"){
-        return company_name
-    }else {
-        return "N/A"
-    }
-}
-
-
-function venta (valor, nombre_empresa) {
-    if (nombre_empresa == "" || nombre_empresa =="A" || nombre_empresa == "B" || nombre_empresa == "C") {
-        return valor
-    }else {
-        return "N/A", valor = 0
-    
-    }
-}
-
-function calular_propina (company_name, valor) {
-    if (company_name == "") {
-        return "N/A"
-    }else if(company_name == "" || company_name =="A" || company_name == "B" || company_name == "C"){
-        let fee = 0.05;
-        valor = valor * fee;
-        return valor
-    }else {
-        return "N/A"
-    }
-    
-   
-}
-
-function comision_venta(company_name, precio, impuestos) {
-    if (company_name == "A") {
-        let descuento = 0.05;
-        precio = precio * descuento;
-        precio = precio * impuestos;
-        return precio
-    } else if (company_name == "B"){
-         let descuento = 0.02;
-         precio = precio * descuento;
-         precio = precio * impuestos;
-         return precio
-    }else if (company_name == "C") {
-        let descuento = 0.06;
-        precio = precio * descuento;
-        precion = precio * impuestos;
-        return precio
-    } else {
-        return "VENTA NULA"
+        return parseInt(valor)
     }
 
-}
-
-function bono(valor_bono, company_name){
-    if(valor_bono <15000 && company_name != null){
-        valor_bono=0;
-        return valor_bono
-    }else if((valor_bono >=15000 && valor_bono <= 25000) && company_name != null) {
-        valor_bono = 500;
-        return valor_bono;
-    } else if((valor_bono > 25000 && valor_bono <=35000) && company_name != null) {
-        valor_bono = 750;
-        return valor_bono
-    }else if(valor_bono > 35000 && company_name != null){
-        valor_bono = 1000;
-        return valor_bono
-    }else
-    return valor_bono = 0;
- }
-
-
-function comprobar_mumero (num, companyName) {
-    while (true) {
-        
-        if(!isNaN(num) && num != null && num != ""){
-            if(companyName == "" || companyName =="A" || companyName == "B" || companyName == "C"){
-                return parseInt(num);
-            }else {
-                return parseInt(num = 0)
-            }
-            
-        break
-        } else{
-            alert("INGRESAR SOLO VALORES NUMERICOS");
-            num = prompt("Ingrese el valor de la venta");
+    company(empresa) {
+        if (empresa == "") {
+            return "N/A"
+        }else if (empresa == "A" || empresa == "B" || empresa == "C"){
+            return empresa
+        }else {
+            return "N/A"
         }
     }
-    return parseInt(num)
+
+    prueba_venta() {
+        if (this.nombre == "" || this.nombre =="A" || this.nombre == "B" || this.nombre == "C") {
+            return this.venta
+        }else {
+            return "N/A", this.venta = 0
+        
+        }
+    }
+
+    retribucion(){
+        this.comision = this.venta *0.05;
+        console.log("La comision obtenida es de: ", this.comision);
+    }
+
+    calular_propina () {
+        if (this.empresa == "") {
+            return "N/A"
+        }else if(this.empresa == "" || this.empresa =="A" || this.empresa == "B" || this.empresa == "C"){
+            let fee = 0.02;
+            this.fee = this.venta * fee;
+            return this.fee
+        }else {
+            return "N/A"
+        }
+        
+       
+    }
+
+    comision_venta() {
+        if (this.empresa == "A") {
+            let descuento = 0.05;
+            this.comision = this.venta * descuento;
+            return this.comision
+        } else if (this.empresa == "B"){
+             let descuento = 0.04;
+             this.comision = this.venta * descuento;
+             return this.comision
+        }else if (this.empresa == "C") {
+            let descuento = 0.06;
+            this.comision = this.venta * descuento;
+            return this.comision
+        } else {
+            return "VENTA NULA"
+        }
+    
+    }
+
+    vale(){
+        if(this.venta <15000 && this.empresa != null){
+            this.venta=0;
+            return this.venta
+        }else if((this.venta >=15000 && this.venta <= 25000) && this.empresa != null) {
+            this.venta = 500;
+            return this.venta;
+        } else if((this.venta > 25000 && this.venta <=35000) && this.empresa != null) {
+            this.venta = 750;
+            return this.venta
+        }else if(this.venta > 35000 && this.empresa != null){
+            this.venta = 1000;
+            return this.venta
+        }else
+        return this.venta = 0;
+     }
+    
 }
+
+
+let asesor1 = new asesor(), sumatoria = [], info = [], max = [];
+arreglo = [];
+
+
+document.getElementById('submit').onclick = function() {
+
+
+let table = document.createElement('table');
+let thead = document.createElement('thead');
+let tbody = document.createElement('tbody');
+
+table.appendChild(thead);
+table.appendChild(tbody);
+
+
+document.getElementById('body').appendChild(table);
+
+let row_1 = document.createElement('tr');
+let heading_1 = document.createElement('th');
+heading_1.innerHTML = "ASESOR";
+let heading_2 = document.createElement('th');
+heading_2.innerHTML = "COMPAÑIA";
+let heading_3 = document.createElement('th');
+heading_3.innerHTML = "VENTA";
+let heading_4 = document.createElement('th');
+heading_4.innerHTML = "COMISION";
+let heading_5 = document.createElement('th');
+heading_5.innerHTML = "PROPINA";
+let heading_6 = document.createElement('th');
+heading_6.innerHTML = "BONO";
+
+row_1.appendChild(heading_1);
+row_1.appendChild(heading_2);
+row_1.appendChild(heading_3);
+row_1.appendChild(heading_4);
+row_1.appendChild(heading_5);
+row_1.appendChild(heading_6);
+thead.appendChild(row_1);
+
+
+
+for(let i = 1; i <= 3 ; i++){
+        let row_2 = document.createElement("tr");
+        let row_2_data_1 = document.createElement("td");
+        arreglo[0] = asesor1.get_nombre();
+        row_2_data_1.innerHTML = arreglo[0];
+        let row_2_data_2 = document.createElement("td");
+        arreglo[1] = asesor1.get_empresa();
+        row_2_data_2.innerHTML = arreglo[1];
+        let row_2_data_3 = document.createElement("td");
+        arreglo[2] = asesor1.get_venta();
+        row_2_data_3.innerHTML = arreglo[2];
+        let row_2_data_4 = document.createElement("td");
+        arreglo[3] = asesor1.comision_venta();
+        row_2_data_4.innerHTML = arreglo[3];
+        let row_2_data_5 = document.createElement("td");
+        arreglo[4] = asesor1.calular_propina();
+        row_2_data_5.innerHTML = arreglo[4];
+        let row_2_data_6 = document.createElement("td");
+        arreglo[5] = asesor1.vale();
+        row_2_data_6.innerHTML = arreglo[5];
+
+        row_2.appendChild(row_2_data_1);
+        row_2.appendChild(row_2_data_2);
+        row_2.appendChild(row_2_data_3);
+        row_2.appendChild(row_2_data_4);
+        row_2.appendChild(row_2_data_5);
+        row_2.appendChild(row_2_data_6);
+        tbody.appendChild(row_2);
+
+        info[i] = {nombre: arreglo[0], venta: arreglo[2]}
+        sumatoria.push(arreglo[2]);
+       
+
+  }
+  let total = 0;
+  for(let j of sumatoria){
+    total+=j;
+  }
+  console.log(info);
+  document.getElementById("totalizado").innerHTML = total;
+ 
+  max = info.reduce((previous, current) => {
+    return current.venta > previous.venta ? current : previous;
+  });
+  console.log(max);
+  document.getElementById("nombre_asesor").innerHTML = max.nombre;
+  document.getElementById("venta_asesor").innerHTML = max.venta;
+
+  Swal.fire('El valor de la mayor venta es: ', (max.venta).toString());
+  return max
+
+} 
 
