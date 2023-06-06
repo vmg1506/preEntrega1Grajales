@@ -1,5 +1,10 @@
 
-
+class coordinador {
+    constructor(ventas){
+        this.nombre = "";
+        this.ventas = ventas;
+    }
+}
 
 class asesor {
     constructor(){
@@ -139,7 +144,9 @@ arreglo = [];
 
 document.getElementById('submit').onclick = function() {
 
-
+let meta = [];
+meta[1] = parseInt(prompt("Ingrese el valor actual de la meta"));
+document.getElementById("meta").innerHTML = meta[1];
 let table = document.createElement('table');
 let thead = document.createElement('thead');
 let tbody = document.createElement('tbody');
@@ -202,17 +209,26 @@ for(let i = 1; i <= 3 ; i++){
         row_2.appendChild(row_2_data_5);
         row_2.appendChild(row_2_data_6);
         tbody.appendChild(row_2);
-
-        info[i] = {nombre: arreglo[0], venta: arreglo[2]}
+        
+        info[i] = {nombre: arreglo[0], empresa: arreglo[1], venta: arreglo[2], comision: arreglo[3], propina: arreglo[5], bono: arreglo[5]}
         sumatoria.push(arreglo[2]);
-       
+        
+
 
   }
   let total = 0;
   for(let j of sumatoria){
     total+=j;
   }
-  console.log(info);
+
+  
+  meta.push(total);
+  if(meta[2] >= meta[1]){
+    console.log("la meta se cumplio y se obtuvo un valor superior de: ", meta[2] - meta[1]);
+  }else{
+    console.log("la meta no se cumplio por una difrencia de: ", meta[1] - meta[2]);
+  }
+
   document.getElementById("totalizado").innerHTML = total;
  
   max = info.reduce((previous, current) => {
@@ -225,5 +241,7 @@ for(let i = 1; i <= 3 ; i++){
   Swal.fire('El valor de la mayor venta es: ', (max.venta).toString());
   return max
 
-} 
+  
 
+} 
+ 
