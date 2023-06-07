@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+#meta, #goal, #valor, #nombre_asesor, #venta_asesor {
+  font-weight: 600;
+}
+
 #body {
   display: flex;
   justify-content: center;

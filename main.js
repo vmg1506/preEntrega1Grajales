@@ -1,10 +1,12 @@
 
-class coordinador {
-    constructor(ventas){
-        this.nombre = "";
-        this.ventas = ventas;
-    }
-}
+//ELEMENTOS HTML CREADOS DESDE JS
+
+let contenedor_titulo = document.getElementById("contenedor_titulo")
+let titulo = document.createElement("h2");
+titulo.innerText = "Simulador de ventas";
+titulo.className = "titulo";
+titulo.style.textAlign = "center";
+contenedor_titulo.append(titulo);
 
 class asesor {
     constructor(){
@@ -224,8 +226,25 @@ for(let i = 1; i <= 3 ; i++){
   
   meta.push(total);
   if(meta[2] >= meta[1]){
+
+    let goal = document.getElementById("goal");
+    let cumplimiento = document.createElement("p");
+    cumplimiento.innerText = "La meta se cumplio y se obtuvo una diferencia de: ";
+    
+    let valor = document.getElementById("valor");
+    document.getElementById("valor").innerHTML = meta[2] - meta[1];
+    goal.append(cumplimiento);
+    
     console.log("la meta se cumplio y se obtuvo un valor superior de: ", meta[2] - meta[1]);
+    
   }else{
+    let goal = document.getElementById("goal");
+    let cumplimiento = document.createElement("p");
+    cumplimiento.innerText = "la meta no se cumplio por una difrencia de: ";
+    
+    let valor = document.getElementById("valor");
+    document.getElementById("valor").innerHTML = meta[1] - meta[2];
+    goal.append(cumplimiento);
     console.log("la meta no se cumplio por una difrencia de: ", meta[1] - meta[2]);
   }
 
@@ -239,7 +258,7 @@ for(let i = 1; i <= 3 ; i++){
   document.getElementById("venta_asesor").innerHTML = max.venta;
 
   Swal.fire('El valor de la mayor venta es: ', (max.venta).toString());
-  return max
+  
 
   
 
