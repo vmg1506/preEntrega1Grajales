@@ -4,53 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet"/>
-    <title>Prueba simulador</title>
-</head>
-<body id="body">
-    <div class="container">
-        <div class="row">
-          <table border="1" class="table" id="tablaprueba">
-            <thead class="thead-dark">
-              <tr>
-                <th>Nombre</th>
-                <th>Compañia</th>
-                <th>Venta</th>
-                <th>Comision</th>
-                <th>Propina</th>
-                <th>Bono</th>
-              </tr>
-              <!-- <tr>
-                <td id="prueba"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr> -->
-            </thead>
-            <tbody></tbody>
-          </table>
-      
-          <div class="form-group">
-            <button type="button" class="btn btn-primary mr-2" onclick="agregarFila()">Generar tabla</button>
-            <button type="button" class="btn btn-danger" onclick="eliminarFila()">Eliminar Fila</button>
-          </div>
-        </div>
-      </div>
+    <title>SIMULADOR</title>
 
-      
-        <label for="">NOMBRE: </label>
-        <input type="text" id="name">
-        <br><br>
-        <label for="">COMPAÑIA: : </label>
-        <input type="text" id="company">
-        <br><br>
-        <label for="">PREMIUM: : </label>
-        <input type="number" id="sale">
-        <br><br>
-        <button id="btn">ENVIAR</button>
-      <div id="salida"></div>
+    <style>
+        * {box-sizing: border-box;font-family:arial;}
+        .hide {display:none;}
+        .right {text-align:right;}
+        .error {border:1px solid Red;}
+     
+        .nombre {width:100%}
+        .formulario {text-align:center;width:400px;border:1px solid #eee;padding:10px;}
+        .formulario label,.formulario label~input {
+            width: 50%;
+            display: inline-block;
+        }
+        .formulario label {text-align:right;padding-right:20px;}
+        .formulario>div {margin-top:10px;overflow:hidden;}
+        .boton {
+            border:none;
+            color:white;
+            padding:10px 20px;
+        }
+        .agregar {
+            background-color:green;
+        }
+        .enviar {
+            background-color:rgb(128, 0, 117);
+        }
+     
+        #listado {
+            border:1px solid #eee;
+            margin-top:20px;
+            width:400px;
+        }
+        #listado th {background-color:#eee;padding:5px 10px;}
+        #listado img {
+            cursor:pointer;
+        }
+        </style>
+</head>
+<body>
+    <form class="formulario" method="POST">
+    <div>
+        <label>Nombre del asesor</label><input type="text" name="nombre">
+    </div>
+    <div>
+        <label>Compañia</label><select name="opciones" id="opciones">
+          <option value="A">Compañia A</option>
+          <option value="B">Compañia B</option>
+          <option value="C">Compañia C</option>
+        </select>
+        
+    </div>
+    <div>
+        <label>Venta</label><input type="number" name="sale">
+    </div>
+    <div>
+        <br><input type="submit" value="Agregar" class="boton agregar"> <input type="button" value="Enviar" class='boton enviar'>
+    </div>
+</form>
+ 
+<table id="listado" class='hide'>
+    <thead>
+        <th>Asesor</th>
+        <th>Compañia</th>
+        <th>Venta</th>
+        <th>Comision</th>
+        <th>Propina</th>
+        <th>Bono</th>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+
     <script src="prueba2.js"></script>
 </body>
 </html>
