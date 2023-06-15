@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/main.css">
+    <title>SIMULADOR</title>
+</head>
+<body>
+    <form class="formulario" method="POST">
+    <div>
+        <label>Nombre del asesor</label><input type="text" name="nombre">
+    </div>
+    <div>
+        <label>Compañia</label><select name="opciones" id="opciones">
+          <option value="A">Compañia A</option>
+          <option value="B">Compañia B</option>
+          <option value="C">Compañia C</option>
+        </select>
+        
+    </div>
+    <div>
+        <label>Venta</label><input type="number" name="sale">
+    </div>
+    
+    <div>
+        <br><input type="submit" value="Agregar" class="boton agregar">
+    </div>
+    
+</form>
+ 
+<table id="listado" class='hide'>
+    <thead>
+        <th>Asesor</th>
+        <th>Compañia</th>
+        <th>Venta</th>
+        <th>Comision</th>
+        <th>Propina</th>
+        <th>Bono</th>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<br><br>
+<div>
+  <label for="">Total de las ventas: </label><h2 id="totalizado"></h2>
+  
+</div>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
